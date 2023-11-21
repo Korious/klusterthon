@@ -7,27 +7,27 @@ body {
 
 .container {
   display: flex;
-  height: 100vh;
-  max-width: 100%;
+  flex-direction: column; /* Stack items vertically on small screens */
   align-items: center;
   justify-content: center;
   background-color: #7d9820;
+  padding: 20px;
 }
 
 /* White box containing carousel on the left and login form on the right */
 .content-box {
   display: flex;
+  flex-direction: column; /* Stack items vertically on small screens */
   background-color: white;
   border-radius: 15px;
-  margin: 40px;
+  margin: 20px;
   overflow: hidden;
 }
 
 /* Carousel */
 .container-left {
-  flex: 1;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 #slider {
@@ -68,9 +68,8 @@ body {
 
 /* Login Form */
 .container-right {
-  flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack items vertically on small screens */
   align-items: center;
 }
 
@@ -86,11 +85,6 @@ body {
   border: 1px solid #7d9820;
   border-radius: 5px;
   transition: border-color 0.3s;
-}
-
-.form .pwd {
-  text-align: right;
-  margin-top: 0px;
 }
 
 .form input:hover {
@@ -127,11 +121,20 @@ body {
 /* Media Queries */
 @media screen and (min-width: 768px) {
   /* Adjust styles for screens wider than 768px */
-  .form {
-    max-width: 49%;
+  .container {
+    flex-direction: row; /* Arrange items side by side on larger screens */
   }
 
-  .form input {
-    width: 70%;
+  .content-box {
+    flex-direction: row; /* Arrange items side by side on larger screens */
+  }
+
+  .container-left {
+    flex: 1;
+  }
+
+  .container-right {
+    flex: 1;
+    align-items: flex-start; /* Adjust alignment for larger screens */
   }
 }
