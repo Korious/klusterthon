@@ -75,12 +75,12 @@ body {
 }
 
 .form {
-  max-width: 49%;
+  max-width: 100%;
   padding: 20px;
 }
 
 .form input {
-  width: 70%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #7d9820;
@@ -122,4 +122,16 @@ body {
   border-radius: 5px;
   color: white;
   cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  /* Adjust styles for screens wider than 768px */
+  .form {
+    max-width: 49%;
+  }
+
+  .form input {
+    width: 70%;
+  }
 }
