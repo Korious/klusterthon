@@ -1,13 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #7d9820;
 }
 
 .container {
   display: flex;
-  flex-direction: column; /* Stack items vertically on small screens */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #7d9820;
@@ -17,7 +17,7 @@ body {
 /* White box containing carousel on the left and login form on the right */
 .content-box {
   display: flex;
-  flex-direction: column; /* Stack items vertically on small screens */
+  flex-direction: column;
   background-color: white;
   border-radius: 15px;
   margin: 20px;
@@ -32,44 +32,41 @@ body {
 
 #slider {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.8s ease-in-out;
   overflow: hidden;
 }
 
 #slider figure {
   display: flex;
-  width: 300%; /* Adjust the width based on the number of images */
+  width: 400%; /* Adjust the width based on the number of images */
   margin: 0;
   animation: slider 15s infinite;
 }
 
 #slider figure img {
-  width: 100%; /* Make images responsive */
-  flex: 1;
+  width: 100%;
+  object-fit: cover; /* Maintain image aspect ratio */
 }
 
 @keyframes slider {
   0% {
     transform: translateX(0);
   }
+  20% {
+    transform: translateX(0);
+  }
   25% {
     transform: translateX(-100%);
   }
-  50% {
-    transform: translateX(-200%);
-  }
-  75% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(0);
+  45% {
+    transform: translateX(-100%);
   }
 }
 
 /* Login Form */
 .container-right {
   display: flex;
-  flex-direction: column; /* Stack items vertically on small screens */
+  flex-direction: column;
   align-items: center;
 }
 
@@ -78,17 +75,36 @@ body {
   padding: 20px;
 }
 
+.form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Darken the text color */
+}
+
+.form p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666; /* Slightly darken the text color */
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
 .form input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #7d9820;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Lighten the border color */
   border-radius: 5px;
   transition: border-color 0.3s;
 }
 
-.form input:hover {
-  border-color: #fff;
+.form input:hover,
+.form input:focus {
+  border-color: #555; /* Darken the border color on hover and focus */
 }
 
 .input-group {
@@ -97,36 +113,35 @@ body {
 
 .input-group i {
   position: absolute;
-  left: 10px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #7d9820;
-  pointer-events: none;
-}
-
-.input-group input {
-  padding-left: 30px;
+  color: #555;
 }
 
 .form button {
   width: 100%;
-  padding: 10px;
-  background-color: #7d9820;
+  padding: 12px;
+  background-color: #555;
   border: none;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form button:hover {
+  background-color: #333;
 }
 
 /* Media Queries */
 @media screen and (min-width: 768px) {
-  /* Adjust styles for screens wider than 768px */
   .container {
-    flex-direction: row; /* Arrange items side by side on larger screens */
+    flex-direction: row;
   }
 
   .content-box {
-    flex-direction: row; /* Arrange items side by side on larger screens */
+    flex-direction: row;
   }
 
   .container-left {
@@ -135,6 +150,10 @@ body {
 
   .container-right {
     flex: 1;
-    align-items: flex-start; /* Adjust alignment for larger screens */
+    align-items: flex-start;
+  }
+
+  #slider figure {
+    width: 100%;
   }
 }
