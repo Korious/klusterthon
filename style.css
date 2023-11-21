@@ -76,13 +76,7 @@ body {
   
   .form {
     max-width: 45%;
-    padding: 20px;
-  }
-  
-  .form h3,
-  .form p,
-  .form label {
-    text-align: center;
+    padding: 20px; /* Corrected value */
   }
   
   .form input {
@@ -92,6 +86,10 @@ body {
     border: 1px solid #7d9820;
     border-radius: 5px;
     transition: border-color 0.3s;
+  }
+  
+  .form .input-group .pwd {
+    text-align: right;
   }
   
   .form input:hover {
