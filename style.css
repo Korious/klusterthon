@@ -123,15 +123,22 @@ body {
   color: white;
   cursor: pointer;
 }
-
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  /* Adjust styles for screens wider than 768px */
-  .form {
-    max-width: 49%;
+/* Add this media query at the end of your CSS file */
+@media screen and (max-width: 767px) {
+  .content-box {
+    flex-direction: column-reverse;
   }
 
-  .form input {
-    width: 70%;
+  .container-right {
+    max-width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .container-left,
+  #slider figure {
+    width: 100%;
   }
 }
